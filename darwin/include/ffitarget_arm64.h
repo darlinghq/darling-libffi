@@ -53,7 +53,7 @@ typedef enum ffi_abi
 #define FFI_CLOSURES 1
 // If the Python framework is going to link to this library,
 // it needs the legacy closure api.
-#if defined(__DARLING__)
+#if defined(DARLING)
 #define FFI_LEGACY_CLOSURE_API 1
 #else 
 #define FFI_LEGACY_CLOSURE_API 0
