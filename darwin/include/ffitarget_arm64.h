@@ -51,7 +51,13 @@ typedef enum ffi_abi
 /* ---- Definitions for closures ----------------------------------------- */
 
 #define FFI_CLOSURES 1
+// If the Python framework is going to link to this library,
+// it needs the legacy closure api.
+#if defined(__DARLING__)
+#define FFI_LEGACY_CLOSURE_API 1
+#else 
 #define FFI_LEGACY_CLOSURE_API 0
+#endif
 #define FFI_NATIVE_RAW_API 0
 
 #if defined (FFI_EXEC_TRAMPOLINE_TABLE) && FFI_EXEC_TRAMPOLINE_TABLE
